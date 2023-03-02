@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-bt">
     <head>
@@ -47,9 +45,10 @@
 
                 <div class=" paragrafo col-12">
 
-                    <?php
+                   <?php
                         if(isset( $_GET['peso'])) {
                             calcula();
+                           
                         }
                     ?>
 
@@ -60,7 +59,6 @@
         </div>
 
         
-
         <div class="row  d-flex justify-content-between">
 
             <div class=" col-7  ">
@@ -84,10 +82,7 @@
                 <a href="">Entenda como emagrecer de forma saudável</a><br>
             </div>               
 
-           
-
         </div>
-
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
             
@@ -97,47 +92,41 @@
 
 <?php
 
-
-
 function calcula(){
 
     $peso = $_GET['peso'];
     $altura = $_GET['altura'];
     $imc =  $peso / ($altura * $altura);
 
- 
+    $imc = number_format($imc,1,",",".");
+
     if($imc <= 18.5){
 
-        echo"Seu IMC é de: $imc. Você está abaixo do peso! COMA MAIS!";
+        echo"Seu IMC é de: $imc Você está abaixo do peso! COMA MAIS!";
 
     }elseif($imc <= 24.9){
 
-        echo"Seu IMC é de: $imc. Você está com o peso ideal. PARABÉNS!";
+        echo"Seu IMC é de: $imc Você está com o peso ideal. PARABÉNS!";
 
     }elseif($imc <= 29.9){
 
-        echo"Seu IMC é de: $imc. Você está levemente acima do peso. CUIDADO!";
+        echo"Seu IMC é de: $imc Você está levemente acima do peso. CUIDADO!";
 
     }elseif($imc <= 34.9){
 
-        echo"Seu IMC é de: $imc. Você está com obesidade grau 1. REGULE SUA ALIMENTAÇÂO!";
+        echo"Seu IMC é de: $imc Você está com obesidade grau 1. REGULE SUA ALIMENTAÇÃO!";
 
     }elseif($imc <= 39.9){
 
-        echo"Seu IMC é de: $imc. Você está com obesidade grau 2 (severa). REGULE SUA ALIMENTAÇÂO";
+        echo"Seu IMC é de: $imc Você está com obesidade grau 2 (severa). REGULE SUA ALIMENTAÇÃO";
 
     }else{
 
-        echo"Seu IMC é de: $imc. Você está com obesidade grau 3 (mórbida). REGULE SUA ALIMENTAÇÂO";
+        echo"Seu IMC é de: $imc Você está com obesidade grau 3 (mórbida). REGULE SUA ALIMENTAÇÃO";
 
     }
-
-
 }
    
-
-
-
 
 //echo phpinfo();
 
@@ -149,8 +138,6 @@ function calcula(){
 //$peso = 65;
 //$altura = 1.66  ;
 //$imc = $peso / ($altura * $altura);
-
-
 
 //if($imc < 18 ) {
 
